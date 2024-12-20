@@ -1,0 +1,9 @@
+.wrap {
+  margin: 0 auto;
+  width: 100px;
+}
+.popoverContent {
+  border: 2px solid red;
+  width: 100%;
+  margin-top: 10px;
+}
