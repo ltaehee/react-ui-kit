@@ -6,7 +6,6 @@
 
 #### Children
 
-- Tabs
 - Tabs.MenuList
 - Tabs.Menu
 - Tabs.Pannel
@@ -32,7 +31,6 @@
 
 #### Children
 
-- Carousel
 - Carousel.ItemList
 - Carousel.Item
 - Carousel.Navigator
@@ -41,7 +39,7 @@
 #### 예시
 
 ```tsx
-<Carousel itemLength={3}>
+<Carousel>
   <Carousel.ItemList>
     <Carousel.Item index={0}></Carousel.Item>
     <Carousel.Item index={1}></Carousel.Item>
@@ -58,7 +56,6 @@
 
 #### Children
 
-- Calendar
 - Calendar.Current
 - Calendar.Navigator
 - Calendar.Body
@@ -79,7 +76,6 @@
 
 #### Children
 
-- Breadcrumb
 - Breadcrumb.Item
 
 #### 예시
@@ -100,7 +96,6 @@
 
 #### Children
 
-- Pagination
 - Pagination.PageButtons
 - Pagination.Navigator
 
@@ -125,7 +120,6 @@
 
 #### Children
 
-- Popover
 - Popover.Trigger
 - Popover.Content
 
@@ -142,10 +136,6 @@
 
 ### 7.Progress(미완성)
 
-#### Children
-
-- Progress
-
 #### 예시
 
 ```tsx
@@ -158,7 +148,6 @@
 
 #### Children
 
-- Modal
 - Modal.Trigger
 - Modal.Content
 - Modal.Close
@@ -183,10 +172,6 @@
 ---
 
 ### 9.DatePicker
-
-#### Children
-
-- DatePicker
 
 #### 예시
 
@@ -218,7 +203,6 @@
 
 #### Children
 
-- Select
 - Select.Trigger
 - Select.Content
 - Select.Item

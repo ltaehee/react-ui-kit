@@ -1,12 +1,13 @@
-import { useContext } from "react";
+import { ReactNode, useContext } from "react";
 import { CarouselContext } from ".";
 import { carouselNavigatorBaseCls } from "@consts/className";
 
 interface CarouselNavigatorProps {
   className?: string;
+  children?: (prev: () => void, next: () => void) => ReactNode;
 }
 
-const CarouselNavigator = ({ className }: CarouselNavigatorProps) => {
+const CarouselNavigator = ({ className, children }: CarouselNavigatorProps) => {
   const carouseNavigatorCls = className
     ? `${className} ${carouselNavigatorBaseCls}`
     : carouselNavigatorBaseCls;

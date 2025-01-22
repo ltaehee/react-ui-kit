@@ -70,10 +70,18 @@ function App() {
           <Carousel.Item index={1}></Carousel.Item>
           <Carousel.Item index={2}></Carousel.Item>
         </Carousel.ItemList>
-        <Carousel.Navigator />
+        <Carousel.Navigator>
+          {(prev, next) => (
+            <div>
+              <span onClick={prev}>prev</span>
+              <span onClick={next}>next</span>
+            </div>
+          )}
+        </Carousel.Navigator>
+        {/* <Carousel.Navigator /> */}
         <Carousel.Indicator />
       </Carousel>
-      <Calendar onChange={handleChangeDate} value={date}>
+      {/* <Calendar onChange={handleChangeDate} value={date}>
         <Calendar.Current />
         <Calendar.Navigator />
         <Calendar.Body />
@@ -125,7 +133,7 @@ function App() {
           <Select.Item value={"2"}>Two</Select.Item>
           <Select.Item value={"3"}>Three</Select.Item>
         </Select.Content>
-      </Select>
+      </Select> */}
     </>
   );
 }
