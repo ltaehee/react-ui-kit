@@ -4,6 +4,13 @@
 
 ### 1.Tabs
 
+### Children
+
+- Tabs
+- Tabs.MenuList
+- Tabs.Menu
+- Tabs.Pannel
+
 #### 예시
 
 ```tsx
@@ -19,7 +26,17 @@
 </Tabs>
 ```
 
+---
+
 ### 2.Carousel
+
+### Children
+
+- Carousel
+- Carousel.ItemList
+- Carousel.Item
+- Carousel.Navigator
+- Carousel.Indicator
 
 #### 예시
 
@@ -35,7 +52,16 @@
 </Carousel>
 ```
 
+---
+
 ### 3.Calendar
+
+### Children
+
+- Calendar
+- Calendar.Current
+- Calendar.Navigator
+- Calendar.Body
 
 #### 예시
 
@@ -47,7 +73,14 @@
 </Calendar>
 ```
 
+---
+
 ### 4.Breadcrumb
+
+### Children
+
+- Breadcrumb
+- Breadcrumb.Item
 
 #### 예시
 
@@ -61,7 +94,15 @@
 </Breadcrumb>
 ```
 
+---
+
 ### 5.Pagination
+
+### Children
+
+- Pagination
+- Pagination.PageButtons
+- Pagination.Navigator
 
 #### 예시
 
@@ -78,18 +119,32 @@
 </Pagination>
 ```
 
+---
+
 ### 6.Popover
+
+### Children
+
+- Popover
+- Popover.Trigger
+- Popover.Content
 
 #### 예시
 
 ```tsx
-<Popover className="wrap" position="bottom-left">
+<Popover position="bottom-left">
   <Popover.Trigger>Open</Popover.Trigger>
   <Popover.Content>Place content for the popover here.</Popover.Content>
 </Popover>
 ```
 
-### 7.Progress
+---
+
+### 7.Progress(미완성)
+
+### Children
+
+- Progress
 
 #### 예시
 
@@ -97,7 +152,16 @@
 <Progress stop={stop}></Progress>
 ```
 
+---
+
 ### 8.Modal
+
+### Children
+
+- Modal
+- Modal.Trigger
+- Modal.Content
+- Modal.Close
 
 #### 예시
 
@@ -107,28 +171,58 @@
   <Modal.Trigger>
     <button>custom-modal-open</button>
   </Modal.Trigger>
-  <Modal.Content className="ModalContentWrap">
+  <Modal.Content>
     <div>custom-modal-content</div>
-    <Modal.Close className="ModalClose">
+    <Modal.Close>
       <button>custom-modal-close</button>
     </Modal.Close>
   </Modal.Content>
 </Modal>
 ```
 
+---
+
 ### 9.DatePicker
+
+### Children
+
+- DatePicker
 
 #### 예시
 
 ```tsx
-<DatePicker
-  date={new Date()}
-  onChangeDate={handleChangeDate}
-  className="datePickerWrap"
-/>
+<DatePicker date={new Date()} onChangeDate={handleChangeDate} />
 ```
 
+- 내부 컴포넌트 설명
+
+```tsx
+<Popover position="bottom-left" className={datePickerCls}>
+  <Popover.Trigger className="datepicker-trigger">
+    {pickDate.toISOString().split("T")[0]}
+  </Popover.Trigger>
+  <Popover.Content className="datepicker-content">
+    <Calendar onChange={handleChangeDate} value={date}>
+      <Calendar.Current className="datepicker-calendar-current" />
+      <Calendar.Navigator className="datepicker-calendar-navigator" />
+      <Calendar.Body className="datepicker-calendar-body" />
+    </Calendar>
+  </Popover.Content>
+</Popover>
+```
+
+-- 고정된 className을 사용
+
+---
+
 ### 10.Select
+
+### Children
+
+- Select
+- Select.Trigger
+- Select.Content
+- Select.Item
 
 #### 예시
 
