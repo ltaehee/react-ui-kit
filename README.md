@@ -195,6 +195,7 @@
 ```
 
 - 내부 컴포넌트 설명
+- 고정된 className을 사용
 
 ```tsx
 <Popover position="bottom-left" className={datePickerCls}>
@@ -210,8 +211,6 @@
   </Popover.Content>
 </Popover>
 ```
-
--- 고정된 className을 사용
 
 ---
 
