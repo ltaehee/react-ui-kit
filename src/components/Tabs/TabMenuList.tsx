@@ -1,5 +1,5 @@
+import { tabsMenuListBaseCls } from "@consts/className";
 import { ReactNode } from "react";
-import { tabsMenuListBaseCls } from "../../consts/className";
 
 interface TabMenuListProps {
   children: ReactNode;

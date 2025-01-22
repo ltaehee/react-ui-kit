@@ -1,9 +1,11 @@
 .wrap {
-  margin: 0 auto;
-  width: 100px;
-}
-.popoverContent {
-  border: 2px solid red;
   width: 100%;
-  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+.ModalContentWrap {
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
 }

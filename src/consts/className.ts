@@ -33,6 +33,25 @@ export const paginationButtonsBaseCls = getBaseCls("pagination-Buttons");
 export const paginationNavigatorBaseCls = getBaseCls("pagination-Navigator");
 
 /* Popover Component */
-export const PopoverBaseCls = getBaseCls("Popover");
-export const PopoverContentBaseCls = getBaseCls("Popover-Content");
-export const PopoverTriggerBaseCls = getBaseCls("Popover-Trigger");
+export const popoverBaseCls = getBaseCls("popover");
+export const popoverContentBaseCls = getBaseCls("popover-content");
+export const popoverTriggerBaseCls = getBaseCls("popover-trigger");
+
+/* Progress Component */
+export const progressBaseCls = getBaseCls("progress");
+
+/* Modal Component */
+export const modalBaseCls = getBaseCls("modal");
+export const modalBackdropCls = getBaseCls("modal-backdrop");
+export const modalContentCls = getBaseCls("modal-content");
+export const modalTriggerCls = getBaseCls("modal-trigger");
+export const modalCloseCls = getBaseCls("modal-close");
+
+/* DatePicker */
+export const datePickerBaseCls = getBaseCls("datePicker");
+
+/* Select Component */
+export const selectBaseCls = getBaseCls("select");
+export const selectContentCls = getBaseCls("select-content");
+export const selectTriggerCls = getBaseCls("select-trigger");
+export const selectItemCls = getBaseCls("select-item");

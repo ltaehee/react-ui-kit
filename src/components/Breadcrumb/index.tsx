@@ -10,7 +10,7 @@ import {
 import "./style.css";
 import BreadcrumbSeparte from "./BreadcrumbSeparte";
 import BreadcrumbItem from "./BreadcrumbItem";
-import { breadcrumbBaseCls } from "../../consts/className";
+import { breadcrumbBaseCls } from "@consts/className";
 
 interface BreadcrumbCompoundProps {
   Item: typeof BreadcrumbItem;

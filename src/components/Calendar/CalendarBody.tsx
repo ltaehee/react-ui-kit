@@ -1,13 +1,13 @@
 import { useContext, useEffect, useMemo, useState } from "react";
 import { CalendarContext } from ".";
-import { calendarBodyBaseCls } from "../../consts/className";
+import { calendarBodyBaseCls } from "@consts/className";
 
 interface CalendarBodyProps {
   className?: string;
 }
 
 const CalendarBody = ({ className }: CalendarBodyProps) => {
-  const { currentDate } = useContext(CalendarContext);
+  const { currentDate, handleChangeDate } = useContext(CalendarContext);
   const [calendarDays, setCalendarDays] = useState<Date[][]>([]);
 
   const calendarBodyCls = useMemo(() => {
@@ -54,7 +54,7 @@ const CalendarBody = ({ className }: CalendarBodyProps) => {
 
     /* 다음 달 날짜 */
     const nextMonthDays = Array.from(
-      { length: 35 - (prevMonthDays.length + curMonthDays.length) },
+      { length: 42 - (prevMonthDays.length + curMonthDays.length) },
       (_, i) => {
         return new Date(
           currentDate.getFullYear(),
@@ -85,7 +85,9 @@ const CalendarBody = ({ className }: CalendarBodyProps) => {
         {calendarDays.map((week, i) => (
           <div key={i}>
             {week.map((day, j) => (
-              <div key={j}>{day.getDate()}</div>
+              <div key={j} onClick={() => handleChangeDate(day)}>
+                {day.getDate()}
+              </div>
             ))}
           </div>
         ))}

@@ -1,6 +1,6 @@
 import { useContext, useMemo } from "react";
 import { CalendarContext } from ".";
-import { calendarNavigatorBaseCls } from "../../consts/className";
+import { calendarNavigatorBaseCls } from "@consts/className";
 
 interface CalendarNavigatorProps {
   className?: string;
@@ -17,8 +17,8 @@ const CalendarNavigator = ({ className }: CalendarNavigatorProps) => {
 
   return (
     <div className={calendarNavigatorCls}>
-      <button onClick={handleClickPrev}>이전</button>
-      <button onClick={handleClickNext}>다음</button>
+      <div onClick={handleClickPrev}>이전</div>
+      <div onClick={handleClickNext}>다음</div>
     </div>
   );
 };

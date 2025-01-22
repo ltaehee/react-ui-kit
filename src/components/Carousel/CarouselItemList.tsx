@@ -1,5 +1,5 @@
+import { carouselItemListBaseCls } from "@consts/className";
 import { ReactNode } from "react";
-import { carouselItemListBaseCls } from "../../consts/className";
 
 interface CarouselItemListProps {
   children?: ReactNode;

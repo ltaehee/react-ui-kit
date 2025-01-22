@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { CarouselContext } from ".";
-import { carouselItemBaseCls } from "../../consts/className";
+import { carouselItemBaseCls } from "@consts/className";
 
 interface CarouselItemProps {
   index: number;

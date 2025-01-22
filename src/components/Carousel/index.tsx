@@ -10,7 +10,7 @@ import CarouselItemList from "./CarouselItemList";
 import CarouselItem from "./CarouselItem";
 import CarouselNavigator from "./CarouselNavigator";
 import CarouselIndicator from "./CarouselIndicator";
-import { carouselBaseCls } from "../../consts/className";
+import { carouselBaseCls } from "@consts/className";
 
 interface CarouselContextProps {
   children?: ReactNode;

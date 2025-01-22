@@ -2,7 +2,7 @@ import { createContext, FC, ReactNode, useState } from "react";
 import TabMenu from "./TabMenu";
 import TabMenuList from "./TabMenuList";
 import TabPannel from "./TabPannel";
-import { tabsBaseCls } from "../../consts/className";
+import { tabsBaseCls } from "@consts/className";
 
 /* export interface BaseProps {
   index: number;

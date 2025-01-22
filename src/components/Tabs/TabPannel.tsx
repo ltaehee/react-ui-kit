@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { TabContext } from ".";
 import { ReactNode } from "react";
-import { tabsPannelBaseCls } from "../../consts/className";
+import { tabsPannelBaseCls } from "@consts/className";
 
 interface TabPannelProps {
   children: ReactNode;

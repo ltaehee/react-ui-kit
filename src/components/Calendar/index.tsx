@@ -2,7 +2,7 @@ import { createContext, FC, ReactNode, useMemo, useState } from "react";
 import CalendarCurrent from "./CalendarCur";
 import CalendarNavigator from "./CalendarNav";
 import CalendarBody from "./CalendarBody";
-import { calendarBaseCls } from "../../consts/className";
+import { calendarBaseCls } from "@consts/className";
 
 interface CalendarCompoundProps {
   Body: typeof CalendarBody;
@@ -14,12 +14,14 @@ interface CalendarContextProps {
   currentDate: Date;
   handleClickPrev: () => void;
   handleClickNext: () => void;
+  handleChangeDate: (selectedDate: Date) => void;
 }
 
 export const CalendarContext = createContext<CalendarContextProps>({
   currentDate: new Date(),
   handleClickPrev: () => {},
   handleClickNext: () => {},
+  handleChangeDate: () => {},
 });
 
 interface CalendarProps {
@@ -31,26 +33,35 @@ interface CalendarProps {
 const Calendar: FC<CalendarProps> & CalendarCompoundProps = ({
   children,
   className,
+  onChange,
+  value,
 }) => {
-  const [currentDate, setCurrentDate] = useState(new Date());
+  const [currentDate, setCurrentDate] = useState(value);
+
   /* 네비게이트 버튼 함수 */
   const handleClickPrev = () => {
     const prevMonth = new Date(currentDate);
     prevMonth.setMonth(currentDate.getMonth() - 1);
     setCurrentDate(prevMonth);
+    onChange(prevMonth);
   };
   const handleClickNext = () => {
     const nextMonth = new Date(currentDate);
     nextMonth.setMonth(currentDate.getMonth() + 1);
     setCurrentDate(nextMonth);
+    onChange(nextMonth);
   };
 
-  // currentDate가 변경될 때마다 부모 컴포넌트로 변경된 날짜 전달
+  const handleChangeDate = (selectedDate: Date) => {
+    setCurrentDate(selectedDate);
+    onChange(selectedDate);
+  };
 
   const calendarContextValue = {
     currentDate,
     handleClickPrev,
     handleClickNext,
+    handleChangeDate,
   };
 
   const calendarCls = useMemo(() => {

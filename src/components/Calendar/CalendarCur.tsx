@@ -1,6 +1,6 @@
 import { useContext, useMemo } from "react";
 import { CalendarContext } from ".";
-import { calendarCurrentBaseCls } from "../../consts/className";
+import { calendarCurrentBaseCls } from "@consts/className";
 
 interface CalendarCurrentProps {
   className?: string;

@@ -1,5 +1,6 @@
-import { FC, ReactNode, useMemo } from "react";
-import { PopoverTriggerBaseCls } from "../../consts/className";
+import { FC, ReactNode, useContext, useMemo } from "react";
+import { PopoverContext } from ".";
+import { popoverTriggerBaseCls } from "@consts/className";
 
 interface PopoverTriggerProps {
   className?: string;
@@ -7,15 +8,26 @@ interface PopoverTriggerProps {
 }
 
 const PopoverTrigger: FC<PopoverTriggerProps> = ({ className, children }) => {
+  const { handleClickTrigger, triggerRef } = useContext(PopoverContext);
+
   const PopoverTriggerCls = useMemo(() => {
     return className
-      ? `${className} ${PopoverTriggerBaseCls}`
-      : PopoverTriggerBaseCls;
-  }, [className, PopoverTriggerBaseCls]);
+      ? `${className} ${popoverTriggerBaseCls}`
+      : popoverTriggerBaseCls;
+  }, [className, popoverTriggerBaseCls]);
 
   return (
     <>
-      <div className={PopoverTriggerCls}>{children}</div>
+      <div
+        ref={triggerRef}
+        className={PopoverTriggerCls}
+        onClick={handleClickTrigger}
+        style={{
+          position: "relative",
+        }}
+      >
+        {children}
+      </div>
     </>
   );
 };
