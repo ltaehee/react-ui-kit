@@ -4,7 +4,7 @@
 
 ### 1.Tabs
 
-### Children
+#### Children
 
 - Tabs
 - Tabs.MenuList
@@ -30,7 +30,7 @@
 
 ### 2.Carousel
 
-### Children
+#### Children
 
 - Carousel
 - Carousel.ItemList
@@ -56,7 +56,7 @@
 
 ### 3.Calendar
 
-### Children
+#### Children
 
 - Calendar
 - Calendar.Current
@@ -77,7 +77,7 @@
 
 ### 4.Breadcrumb
 
-### Children
+#### Children
 
 - Breadcrumb
 - Breadcrumb.Item
@@ -98,7 +98,7 @@
 
 ### 5.Pagination
 
-### Children
+#### Children
 
 - Pagination
 - Pagination.PageButtons
@@ -123,7 +123,7 @@
 
 ### 6.Popover
 
-### Children
+#### Children
 
 - Popover
 - Popover.Trigger
@@ -142,7 +142,7 @@
 
 ### 7.Progress(미완성)
 
-### Children
+#### Children
 
 - Progress
 
@@ -156,7 +156,7 @@
 
 ### 8.Modal
 
-### Children
+#### Children
 
 - Modal
 - Modal.Trigger
@@ -184,7 +184,7 @@
 
 ### 9.DatePicker
 
-### Children
+#### Children
 
 - DatePicker
 
@@ -217,7 +217,7 @@
 
 ### 10.Select
 
-### Children
+#### Children
 
 - Select
 - Select.Trigger
