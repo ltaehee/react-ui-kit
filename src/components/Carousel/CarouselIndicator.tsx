@@ -11,12 +11,12 @@ const CarouselIndicator = ({ className }: CarouselIndicatorProps) => {
     ? `${className} ${carouselIndigatorBaseCls}`
     : carouselIndigatorBaseCls;
 
-  const { setSelectTab, itemLength } = useContext(CarouselContext);
+  const { setCarouselIndex, itemLength } = useContext(CarouselContext);
 
   return (
     <div className={carouselIndigatorCls}>
       {Array.from({ length: itemLength }).map((_, index) => (
-        <button key={index} onClick={() => setSelectTab(index)}>
+        <button key={index} onClick={() => setCarouselIndex(index)}>
           {index + 1}
         </button>
       ))}

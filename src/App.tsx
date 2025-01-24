@@ -9,6 +9,7 @@ import {
   Modal,
   DatePicker,
   Select,
+  Accordion,
 } from "./components";
 import "./index.css";
 import Progress from "./components/Progress";
@@ -54,7 +55,7 @@ function App() {
 
   return (
     <>
-      <Tabs onChangeTab={handleChangeTab}>
+      {/* <Tabs onChangeTab={handleChangeTab}>
         <Tabs.MenuList>
           <Tabs.Menu index={1}>Menu1</Tabs.Menu>
           <Tabs.Menu index={2}>Menu2</Tabs.Menu>
@@ -78,10 +79,10 @@ function App() {
             </div>
           )}
         </Carousel.Navigator>
-        {/* <Carousel.Navigator /> */}
+        <Carousel.Navigator />
         <Carousel.Indicator />
       </Carousel>
-      {/* <Calendar onChange={handleChangeDate} value={date}>
+      <Calendar onChange={handleChangeDate} value={date}>
         <Calendar.Current />
         <Calendar.Navigator />
         <Calendar.Body />
@@ -106,7 +107,7 @@ function App() {
       <Popover className="wrap" position="bottom-left">
         <Popover.Trigger>Open</Popover.Trigger>
         <Popover.Content>Place content for the popover here.</Popover.Content>
-      </Popover>
+      </Popover> */}
       <Progress stop={stop}></Progress>
       <Modal onCloseModal={handleCloseModal} open={isOpen}>
         <Modal.Backdrop />
@@ -133,7 +134,22 @@ function App() {
           <Select.Item value={"2"}>Two</Select.Item>
           <Select.Item value={"3"}>Three</Select.Item>
         </Select.Content>
-      </Select> */}
+      </Select>
+
+      <Accordion>
+        <Accordion.Item index={0}>
+          <Accordion.Trigger>Trigger1</Accordion.Trigger>
+          <Accordion.Content>Content1</Accordion.Content>
+        </Accordion.Item>
+        <Accordion.Item index={1}>
+          <Accordion.Trigger>Trigger2</Accordion.Trigger>
+          <Accordion.Content>Content2</Accordion.Content>
+        </Accordion.Item>
+        <Accordion.Item index={2}>
+          <Accordion.Trigger>Trigger3</Accordion.Trigger>
+          <Accordion.Content>Content3</Accordion.Content>
+        </Accordion.Item>
+      </Accordion>
     </>
   );
 }

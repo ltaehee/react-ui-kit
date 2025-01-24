@@ -14,15 +14,14 @@ import { carouselBaseCls } from "@consts/className";
 
 interface CarouselContextProps {
   children?: ReactNode;
-  selectTab: number;
-  setSelectTab: Dispatch<SetStateAction<number>>;
+  carouselIndex: number;
+  setCarouselIndex: Dispatch<SetStateAction<number>>;
   itemLength: number;
 }
 export const CarouselContext = createContext<CarouselContextProps>({
-  selectTab: 1,
-  setSelectTab: () => {},
-  children: null,
-  itemLength: 1,
+  carouselIndex: 0,
+  setCarouselIndex: () => {},
+  itemLength: 0,
 });
 
 interface CarouselCompoundProps {
@@ -33,28 +32,23 @@ interface CarouselCompoundProps {
 }
 
 interface CarouselProps {
-  children?: ReactNode;
-  itemLength: number;
+  children: ReactNode;
   className?: string;
+  itemLength: number;
 }
-
-/* const Carousel = ({ children, itemLength }: CarouselProps) => {
-  const [selectTab, setSelectTab] = useState(1);
-  const contextValue = { selectTab, setSelectTab, itemLength };
-  return (
-    <CarouselContext.Provider value={contextValue}>
-      <div>{children}</div>
-    </CarouselContext.Provider>
-  );
-}; */
 
 const Carousel: FC<CarouselProps> & CarouselCompoundProps = ({
   children,
-  itemLength,
   className,
+  itemLength,
 }) => {
-  const [selectTab, setSelectTab] = useState(1);
-  const contextValue = { selectTab, setSelectTab, itemLength };
+  const [carouselIndex, setCarouselIndex] = useState(0);
+
+  const contextValue = {
+    carouselIndex,
+    setCarouselIndex,
+    itemLength,
+  };
 
   const carouselCls = className
     ? `${className} ${carouselBaseCls}`

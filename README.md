@@ -39,7 +39,7 @@
 #### 예시
 
 ```tsx
-<Carousel>
+<Carousel itemLength={3}>
   <Carousel.ItemList>
     <Carousel.Item index={0}></Carousel.Item>
     <Carousel.Item index={1}></Carousel.Item>
@@ -218,4 +218,31 @@
     <Select.Item value={"3"}>Three</Select.Item>
   </Select.Content>
 </Select>
+```
+
+### 10.Accordion
+
+#### Children
+
+- Accordion.Trigger
+- Accordion.Content
+- Accordion.Item
+
+#### 예시
+
+```tsx
+<Accordion>
+  <Accordion.Item index={0}>
+    <Accordion.Trigger>Trigger1</Accordion.Trigger>
+    <Accordion.Content>Content1</Accordion.Content>
+  </Accordion.Item>
+  <Accordion.Item index={1}>
+    <Accordion.Trigger>Trigger2</Accordion.Trigger>
+    <Accordion.Content>Content2</Accordion.Content>
+  </Accordion.Item>
+  <Accordion.Item index={2}>
+    <Accordion.Trigger>Trigger3</Accordion.Trigger>
+    <Accordion.Content>Content3</Accordion.Content>
+  </Accordion.Item>
+</Accordion>
 ```

@@ -12,9 +12,9 @@ const CarouselItem = ({ index, className }: CarouselItemProps) => {
     ? `${className} ${carouselItemBaseCls}`
     : carouselItemBaseCls;
 
-  const { selectTab } = useContext(CarouselContext);
+  const { carouselIndex } = useContext(CarouselContext);
 
-  return selectTab === index ? (
+  return carouselIndex === index ? (
     <div className={carouselItemCls}>item{index + 1}</div>
   ) : null;
 };

@@ -12,19 +12,25 @@ const CarouselNavigator = ({ className, children }: CarouselNavigatorProps) => {
     ? `${className} ${carouselNavigatorBaseCls}`
     : carouselNavigatorBaseCls;
 
-  const { setSelectTab, itemLength } = useContext(CarouselContext);
+  const { setCarouselIndex, itemLength } = useContext(CarouselContext);
 
   const handleNext = () => {
-    setSelectTab((prev) => (prev >= itemLength - 1 ? 0 : prev + 1));
+    setCarouselIndex((prev) => (prev >= itemLength - 1 ? 0 : prev + 1));
   };
 
   const handlePrev = () => {
-    setSelectTab((prev) => (prev <= 0 ? itemLength - 1 : prev - 1));
+    setCarouselIndex((prev) => (prev <= 0 ? itemLength - 1 : prev - 1));
   };
   return (
     <div className={carouseNavigatorCls}>
-      <button onClick={handlePrev}>prev</button>
-      <button onClick={handleNext}>next</button>
+      {children ? (
+        children(handlePrev, handleNext)
+      ) : (
+        <>
+          <button onClick={handlePrev}>prev</button>
+          <button onClick={handleNext}>next</button>
+        </>
+      )}
     </div>
   );
 };
