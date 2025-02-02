@@ -61,3 +61,9 @@ export const accordionBaseCls = getBaseCls("accordion");
 export const accordionContentCls = getBaseCls("accordion-content");
 export const accordionTriggerCls = getBaseCls("accordion-trigger");
 export const accordionItemCls = getBaseCls("accordion-item");
+
+/* toast Component */
+export const toastBaseCls = getBaseCls("toast");
+export const toastTitleCls = getBaseCls("toast-title");
+export const toastDescriptionCls = getBaseCls("toast-description");
+export const toastCloseCls = getBaseCls("toast-close");

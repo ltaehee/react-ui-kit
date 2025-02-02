@@ -13,6 +13,7 @@ import {
 } from "./components";
 import "./index.css";
 import Progress from "./components/Progress";
+import { Toaster, useToast } from "@ui/Toast";
 
 function App() {
   const [date, setDate] = useState(new Date());
@@ -30,9 +31,12 @@ function App() {
     setCurrnetPage(page);
   };
 
+  /* progress */
+  const sleep = async (time: number): Promise<void> =>
+    await new Promise((resolve) => setTimeout(() => resolve(), time));
   const [stop, setStop] = useState<boolean>(false);
-  const getUserData = () => {
-    // User api 호출 ....
+  const getUserData = async () => {
+    await sleep(2000);
     setStop(true);
   };
   useEffect(() => {
@@ -46,11 +50,17 @@ function App() {
     setIsOpen(false);
   };
 
-  /* 셀렉트 메뉴 */
+  /* 셀렉트 */
   const [selectedValue, setSelectedValue] = useState<string>("1");
   const handleChangeValue = (selectedValue: string) => {
     console.log(selectedValue);
     setSelectedValue(selectedValue);
+  };
+
+  /* 토스트알림 */
+  const { toast } = useToast();
+  const handleClickOpenToast = () => {
+    toast({ title: "ToastTitle", description: "ToastDescription" });
   };
 
   return (
@@ -108,7 +118,7 @@ function App() {
         <Popover.Trigger>Open</Popover.Trigger>
         <Popover.Content>Place content for the popover here.</Popover.Content>
       </Popover> */}
-      <Progress stop={stop}></Progress>
+      {/* <Progress stop={stop} /> */}
       <Modal onCloseModal={handleCloseModal} open={isOpen}>
         <Modal.Backdrop />
         <Modal.Trigger>
@@ -150,6 +160,8 @@ function App() {
           <Accordion.Content>Content3</Accordion.Content>
         </Accordion.Item>
       </Accordion>
+      <Toaster />
+      <button onClick={handleClickOpenToast}>open toast</button>
     </>
   );
 }
