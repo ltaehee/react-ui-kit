@@ -134,7 +134,7 @@
 
 ---
 
-### 7.Progress(미완성)
+### 7.Progress
 
 #### 예시
 
@@ -222,7 +222,7 @@
 
 ---
 
-### 10.Accordion
+### 11.Accordion
 
 #### Children
 
@@ -247,4 +247,32 @@
     <Accordion.Content>Content3</Accordion.Content>
   </Accordion.Item>
 </Accordion>
+```
+
+---
+
+### 12.Toast
+
+#### Children
+
+- Toaster
+- ToastTitle
+- ToastDescription
+- ToastClose
+
+#### 예시
+
+- classname:toaster을 사용 해서 커스텀
+
+```tsx
+
+  const { toast } = useToast();
+  const handleClickOpenToast = () => {
+    toast({ title: "ToastTitle", description: "ToastDescription" });
+  };
+
+  return (
+    <Toaster />
+    <button onClick={handleClickOpenToast}>open toast</button>
+  )
 ```

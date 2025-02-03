@@ -56,8 +56,6 @@ const Breadcrumb: FC<BreadcrumbProps> & BreadcrumbCompoundProps = ({
     } else {
       setShowEllipsis(false);
     }
-
-    // console.log("전체 width:", totalWidth);
   }, [totalWidth, containerWidth]);
 
   const breadChildren = Children.toArray(children);

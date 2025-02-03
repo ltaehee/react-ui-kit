@@ -1,4 +1,4 @@
-import { ReactNode, useEffect, useMemo, useRef } from "react";
+import { ReactNode, useEffect, useRef } from "react";
 import ReactDOM from "react-dom/client";
 import ToastTitle from "./ToastTitle";
 import ToastDescription from "./ToastDescription";
@@ -12,29 +12,37 @@ interface ToastProps {
 }
 
 export const useToast = () => {
-  const toastRoot = useRef<ReactDOM.Root>(null);
-  const timerId = useRef<NodeJS.Timeout>(null);
-  const toast = ({ title, description, className }: ToastProps) => {
-    /* const toastCls = useMemo(() => {
-      return className ? `${className} ${toastBaseCls}` : toastBaseCls;
-    }, [className, toastBaseCls]); */
+  const toastRoot = useRef<ReactDOM.Root>();
+  const timerId = useRef<NodeJS.Timeout>();
 
+  const toast = ({ title, description, className = "toaster" }: ToastProps) => {
+    const toastCls = className ? `${className} ${toastBaseCls}` : toastBaseCls;
     if (toastRoot.current) {
       toastRoot.current.unmount();
     }
-    /*  */
+    if (timerId.current) {
+      clearTimeout(timerId.current);
+    }
 
     toastRoot.current = ReactDOM.createRoot(
       document.getElementById("ui-toaster")!
     );
     toastRoot.current.render(
-      <div>
+      <div className={toastCls}>
         <ToastTitle>{title}</ToastTitle>
         <ToastDescription>{description}</ToastDescription>
-        <ToastClose onClose={() => toastRoot.current.unmount()} />
+        <ToastClose
+          onClose={() => {
+            if (toastRoot.current) {
+              toastRoot.current.unmount();
+            }
+            if (timerId.current) {
+              clearTimeout(timerId.current);
+            }
+          }}
+        />
       </div>
     );
-    /* 클린업함수 */
     timerId.current = setTimeout(() => {
       if (toastRoot.current) {
         toastRoot.current.unmount();
@@ -42,9 +50,20 @@ export const useToast = () => {
       if (timerId.current) {
         clearTimeout(timerId.current);
       }
-    }, 3000);
+    }, 10000);
   };
-  // clearTimeout;
+
+  /* 클린업 함수 */
+  useEffect(() => {
+    return () => {
+      if (toastRoot.current) {
+        toastRoot.current.unmount();
+      }
+      if (timerId.current) {
+        clearTimeout(timerId.current);
+      }
+    };
+  }, []);
   return { toast };
 };
 

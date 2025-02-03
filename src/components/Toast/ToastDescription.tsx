@@ -1,12 +1,12 @@
 import { FC, ReactNode } from "react";
 
-interface ToastProps {
-  children: ReactNode;
+interface ToastDescriptionProps {
   className?: string;
+  children: ReactNode;
 }
 
-const ToastDescription: FC<ToastProps> = () => {
-  return <div>ToastDescription</div>;
+const ToastDescription: FC<ToastDescriptionProps> = ({ children }) => {
+  return <div>{children}</div>;
 };
 
 export default ToastDescription;

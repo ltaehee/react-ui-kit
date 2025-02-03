@@ -27,8 +27,6 @@ const BreadcrumbItem: FC<BreadcrumbItemProps> = ({
       const itemWidth = itemRef.current.getBoundingClientRect().width;
       addItemWidth(itemWidth);
     }
-
-    // console.log({ itemWidth });
   }, []);
 
   return (
