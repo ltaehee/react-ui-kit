@@ -263,12 +263,13 @@
 #### 예시
 
 - classname:toaster을 사용 해서 커스텀
+- closeCustom는 필수x
 
 ```tsx
 
   const { toast } = useToast();
   const handleClickOpenToast = () => {
-    toast({ title: "ToastTitle", description: "ToastDescription" });
+    toast({ title: "ToastTitle", description: "ToastDescription",duration: 3000,closeCustom: <>closeCustomBtn</>, });
   };
 
   return (

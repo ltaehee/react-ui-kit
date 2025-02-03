@@ -1,11 +1,12 @@
-import { FC } from "react";
+import { FC, ReactNode } from "react";
 
 interface ToastProps {
   className?: string;
   onClose: () => void;
+  children?: ReactNode;
 }
-const ToastClose: FC<ToastProps> = ({ onClose }) => {
-  return <div onClick={onClose}>닫기</div>;
+const ToastClose: FC<ToastProps> = ({ onClose, children }) => {
+  return <div onClick={onClose}>{children}</div>;
 };
 
 export default ToastClose;

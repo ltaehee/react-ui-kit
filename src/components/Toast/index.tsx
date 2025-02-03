@@ -9,13 +9,21 @@ interface ToastProps {
   title: ReactNode;
   description: ReactNode;
   className?: string;
+  duration: number;
+  closeCustom?: ReactNode;
 }
 
 export const useToast = () => {
   const toastRoot = useRef<ReactDOM.Root>();
   const timerId = useRef<NodeJS.Timeout>();
 
-  const toast = ({ title, description, className = "toaster" }: ToastProps) => {
+  const toast = ({
+    title,
+    description,
+    duration,
+    className = "toaster",
+    closeCustom,
+  }: ToastProps) => {
     const toastCls = className ? `${className} ${toastBaseCls}` : toastBaseCls;
     if (toastRoot.current) {
       toastRoot.current.unmount();
@@ -31,16 +39,20 @@ export const useToast = () => {
       <div className={toastCls}>
         <ToastTitle>{title}</ToastTitle>
         <ToastDescription>{description}</ToastDescription>
-        <ToastClose
-          onClose={() => {
-            if (toastRoot.current) {
-              toastRoot.current.unmount();
-            }
-            if (timerId.current) {
-              clearTimeout(timerId.current);
-            }
-          }}
-        />
+        {closeCustom && (
+          <ToastClose
+            onClose={() => {
+              if (toastRoot.current) {
+                toastRoot.current.unmount();
+              }
+              if (timerId.current) {
+                clearTimeout(timerId.current);
+              }
+            }}
+          >
+            {closeCustom}
+          </ToastClose>
+        )}
       </div>
     );
     timerId.current = setTimeout(() => {
@@ -50,7 +62,7 @@ export const useToast = () => {
       if (timerId.current) {
         clearTimeout(timerId.current);
       }
-    }, 10000);
+    }, duration);
   };
 
   /* 클린업 함수 */

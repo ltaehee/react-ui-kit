@@ -11,9 +11,10 @@ import {
   Select,
   Accordion,
   Progress,
+  useToast,
+  Toaster,
 } from "../components";
 import "../index.css";
-import { Toaster, useToast } from "@ui/Toast";
 
 const HomePage = () => {
   const [date, setDate] = useState(new Date());
@@ -62,6 +63,7 @@ const HomePage = () => {
     toast({
       title: "ToastTitle",
       description: "ToastDescription",
+      duration: 3000,
     });
   };
   return (

@@ -1,5 +1,4 @@
 import { createRoot } from "react-dom/client";
-import App from "./App";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Layout from "@ui/Layout";
 import TestPage from "./pages/testpage";
