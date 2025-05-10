@@ -1,6 +1,6 @@
 ## 🧰 `react-ui-kit` (taehee-ui-components)
 
-**`react-ui-kit`**은 반복적으로 사용하는 UI 컴포넌트들을 효율적으로 관리하기 위해 만든 React 기반 UI 라이브러리입니다.  
+`react-ui-kit`은 반복적으로 사용하는 UI 컴포넌트들을 효율적으로 관리하기 위해 만든 React 기반 UI 라이브러리입니다.  
 TypeScript로 작성되었으며, 컴포넌트 구조와 인터페이스만 제공하고 **스타일은 사용자 프로젝트에 맞게 자유롭게 커스터마이징**할 수 있도록 설계되었습니다.
 
 ## Components
@@ -14,6 +14,8 @@ TypeScript로 작성되었으며, 컴포넌트 구조와 인터페이스만 제�
 - Tabs.Pannel
 
 #### 예시
+
+<img src="./public/tab component.gif" width="600" alt="Tabs Demo" />
 
 ```tsx
 <Tabs onChangeTab={handleChangeTab}>
