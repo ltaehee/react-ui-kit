@@ -1,7 +1,7 @@
-# react-ui-kit (taehee-ui-components)
+## 🧰 `react-ui-kit` (taehee-ui-components)
 
-**react-ui-kit**은 재사용 가능한 프론트엔드 UI 컴포넌트들을 모아 만든 개인 UI 라이브러리입니다.
-React와 TypeScript, TailwindCSS 기반으로 제작되었으며, 팀 프로젝트나 개인 프로젝트에서 반복되는 UI 요소를 간편하게 가져와 사용할 수 있도록 구성했습니다.
+**`react-ui-kit`**은 반복적으로 사용하는 UI 컴포넌트들을 효율적으로 관리하기 위해 만든 React 기반 UI 라이브러리입니다.  
+TypeScript로 작성되었으며, 컴포넌트 구조와 인터페이스만 제공하고 **스타일은 사용자 프로젝트에 맞게 자유롭게 커스터마이징**할 수 있도록 설계되었습니다.
 
 ## Components
 
