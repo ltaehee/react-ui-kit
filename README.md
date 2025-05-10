@@ -15,7 +15,7 @@ TypeScript로 작성되었으며, 컴포넌트 구조와 인터페이스만 제�
 
 #### 예시
 
-<img src="./public/tab component.gif" width="600" alt="Tabs Demo" />
+<img src="./public/componentsGifs/tab.gif" width="400" alt="Tabs demo" />
 
 ```tsx
 <Tabs onChangeTab={handleChangeTab}>
@@ -43,6 +43,8 @@ TypeScript로 작성되었으며, 컴포넌트 구조와 인터페이스만 제�
 
 #### 예시
 
+<img src="./public/componentsGifs/carousel.gif" width="400" alt="Tabs demo" />
+
 ```tsx
 <Carousel itemLength={3}>
   <Carousel.ItemList>
@@ -67,6 +69,8 @@ TypeScript로 작성되었으며, 컴포넌트 구조와 인터페이스만 제�
 
 #### 예시
 
+<img src="./public/componentsGifs/calendar.gif" width="400" alt="Tabs demo" />
+
 ```tsx
 <Calendar onChange={handleChangeDate} value={date}>
   <Calendar.Current />
@@ -84,6 +88,8 @@ TypeScript로 작성되었으며, 컴포넌트 구조와 인터페이스만 제�
 - Breadcrumb.Item
 
 #### 예시
+
+<img src="./public/componentsGifs/breadcrumb.png" width="400" alt="Tabs demo" />
 
 ```tsx
 <Breadcrumb width="800px">
@@ -105,6 +111,8 @@ TypeScript로 작성되었으며, 컴포넌트 구조와 인터페이스만 제�
 - Pagination.Navigator
 
 #### 예시
+
+<img src="./public/componentsGifs/pagination.gif" width="400" alt="Tabs demo" />
 
 ```tsx
 <Pagination
@@ -130,6 +138,8 @@ TypeScript로 작성되었으며, 컴포넌트 구조와 인터페이스만 제�
 
 #### 예시
 
+<img src="./public/tab component.gif" width="400" alt="Tabs demo" />
+
 ```tsx
 <Popover position="bottom-left">
   <Popover.Trigger>Open</Popover.Trigger>
@@ -142,6 +152,8 @@ TypeScript로 작성되었으며, 컴포넌트 구조와 인터페이스만 제�
 ### 7.Progress
 
 #### 예시
+
+<img src="./public/tab component.gif" width="400" alt="Tabs demo" />
 
 ```tsx
 <Progress stop={stop}></Progress>
@@ -158,6 +170,8 @@ TypeScript로 작성되었으며, 컴포넌트 구조와 인터페이스만 제�
 - Modal.Close
 
 #### 예시
+
+<img src="./public/tab component.gif" width="400" alt="Tabs demo" />
 
 ```tsx
 <Modal onCloseModal={handleCloseModal} open={isOpen}>
@@ -179,6 +193,8 @@ TypeScript로 작성되었으며, 컴포넌트 구조와 인터페이스만 제�
 ### 9.DatePicker
 
 #### 예시
+
+<img src="./public/tab component.gif" width="400" alt="Tabs demo" />
 
 ```tsx
 <DatePicker date={new Date()} onChangeDate={handleChangeDate} />
@@ -214,6 +230,8 @@ TypeScript로 작성되었으며, 컴포넌트 구조와 인터페이스만 제�
 
 #### 예시
 
+<img src="./public/tab component.gif" width="400" alt="Tabs demo" />
+
 ```tsx
 <Select onChange={handleChangeValue} value={selectedValue}>
   <Select.Trigger>Open Select</Select.Trigger>
@@ -236,6 +254,8 @@ TypeScript로 작성되었으며, 컴포넌트 구조와 인터페이스만 제�
 - Accordion.Item
 
 #### 예시
+
+<img src="./public/tab component.gif" width="400" alt="Tabs demo" />
 
 ```tsx
 <Accordion>
@@ -266,6 +286,8 @@ TypeScript로 작성되었으며, 컴포넌트 구조와 인터페이스만 제�
 - ToastClose
 
 #### 예시
+
+<img src="./public/tab component.gif" width="400" alt="Tabs demo" />
 
 - classname:toaster을 사용 해서 커스텀
 - closeCustom는 필수x
