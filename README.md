@@ -1,5 +1,8 @@
 # react-ui-kit (taehee-ui-components)
 
+**react-ui-kit**은 재사용 가능한 프론트엔드 UI 컴포넌트들을 모아 만든 개인 UI 라이브러리입니다.
+React와 TypeScript, TailwindCSS 기반으로 제작되었으며, 팀 프로젝트나 개인 프로젝트에서 반복되는 UI 요소를 간편하게 가져와 사용할 수 있도록 구성했습니다.
+
 ## Components
 
 ### 1.Tabs
@@ -185,7 +188,7 @@
 ```tsx
 <Popover position="bottom-left" className={datePickerCls}>
   <Popover.Trigger className="datepicker-trigger">
-    {pickDate.toISOString().split("T")[0]}
+    {pickDate.toISOString().split('T')[0]}
   </Popover.Trigger>
   <Popover.Content className="datepicker-content">
     <Calendar onChange={handleChangeDate} value={date}>
@@ -213,9 +216,9 @@
 <Select onChange={handleChangeValue} value={selectedValue}>
   <Select.Trigger>Open Select</Select.Trigger>
   <Select.Content>
-    <Select.Item value={"1"}>One</Select.Item>
-    <Select.Item value={"2"}>Two</Select.Item>
-    <Select.Item value={"3"}>Three</Select.Item>
+    <Select.Item value={'1'}>One</Select.Item>
+    <Select.Item value={'2'}>Two</Select.Item>
+    <Select.Item value={'3'}>Three</Select.Item>
   </Select.Content>
 </Select>
 ```
