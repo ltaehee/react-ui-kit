@@ -1,8 +1,3 @@
-.wrap {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
 .ModalContentWrap {
   background-color: white;
   border-radius: 5px;
